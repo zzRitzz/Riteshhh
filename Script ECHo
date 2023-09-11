@@ -1,0 +1,45 @@
+pipeline {
+    agent any // You can specify a specific label if needed
+    stages {
+        stage('git Clone'){
+            steps {
+                echo "clone"
+            }
+        } 
+        stage('Preparation'){
+            steps {
+                echo "prep"
+            }  
+        }
+        stage('Code build'){
+            steps {
+                echo "build"
+            }  
+        }
+        stage('code test'){
+            steps {
+               echo "code test"
+            }  
+        }
+        stage('code quality check'){
+            steps {
+                echo "code quality"
+            }  
+        }
+        stage('Docker image build'){
+            steps {
+                echo "docker"
+            }  
+        }
+        stage('docker image push'){
+            steps {
+                echo "Docker"
+            }
+        }
+        stage('deployment'){
+            steps {
+               echo "deployment"
+            }
+        }
+    }
+}
